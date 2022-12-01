@@ -11,7 +11,6 @@ class PhonesController {
     const phones = await phonesService.getCart(ids);
 
     res.statusCode = 200;
-    res.json(phones);
     res.json(req.body);
   }
 
