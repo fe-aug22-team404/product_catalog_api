@@ -13,12 +13,12 @@ class PhonesController {
   }
 
   async getPhones(req: Request, res: Response) {
-    const { ids } = req.body || null;
+    const { ids } = req.body;
     
     const phones = await phonesService.getAll(ids);
 
     res.statusCode = 200;
-    res.json(phones);
+    res.json(ids);
   };
 }
 
