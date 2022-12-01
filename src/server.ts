@@ -1,7 +1,5 @@
 import express from 'express';
-// import pg from 'pg';
 import cors from 'cors';
-// import serverless from 'serverless-http';
 import { phonesController } from './controllers/phone';
 import { PhoneData } from './data/models/phones';
 import { phonesDescriptionController } from './controllers/phoneDescription';
@@ -25,6 +23,5 @@ PhoneDescription.sync();
 app.listen(port, () => {
   console.log('server started ', port);
 });
-// app.use('/.netlify/functions/server', phonesRouter);
 
 // export const handler = serverless(app);
