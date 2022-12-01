@@ -5,11 +5,11 @@ import { Request, Response } from "express";
 const { phonesService } = require('../services/phones');
 
 class PhonesController {
-  async postPhone(req: Request, res: Response) {
-    const user = await phonesService.createPhone(req.body);
+  async getPhonesById(req: Request, res: Response) {
+    const phones = await phonesService.getCart(req.body);
 
-    res.statusCode = 201;
-    res.json(user);
+    res.statusCode = 200;
+    res.json(phones);
   }
 
   async getPhones(req: Request, res: Response) {

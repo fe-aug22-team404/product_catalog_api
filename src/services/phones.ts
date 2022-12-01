@@ -4,20 +4,20 @@ import { Phone } from '../types/Phone';
 import { PhoneData } from '../data/models/phones';
 
 class PhonesService {
-  async getAll(ids: number[] | null) {
-    let phones;
+  async getAll() {
+    const phones = await PhoneData.findAll();
 
-    if (!ids) {
-      phones = await PhoneData.findAll();
-    } else {
-      phones = await PhoneData.findAll({
+    return phones;
+  }
+
+  async getCart(ids: number[]) {
+    const phones = await PhoneData.findAll({
         where: {
           'id': {
             [Op.or]: ids,
           }
         }
-      });
-    }
+    });
 
     return phones;
   }
