@@ -13,25 +13,12 @@ class PhonesController {
   }
 
   async getPhones(req: Request, res: Response) {
-    const phones = await phonesService.getAll();
+    const { ids } = req.body || null;
+    
+    const phones = await phonesService.getAll(ids);
 
     res.statusCode = 200;
     res.json(phones);
-  };
-
-  async getPhone(req: Request, res: Response) {
-    const { phoneId } = req.params;
-
-    const phone = await phonesService.getOne(+phoneId);
-
-    if (!phone) {
-      res.statusCode = 404;
-
-      return;
-    }
-
-    res.statusCode = 200;
-    res.json(phone);
   };
 }
 
