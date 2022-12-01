@@ -6,19 +6,20 @@ const { phonesService } = require('../services/phones');
 
 class PhonesController {
   async getPhonesById(req: Request, res: Response) {
-    const phones = await phonesService.getCart(req.body);
+    const { ids } = req.body;
+
+    const phones = await phonesService.getCart(ids);
 
     res.statusCode = 200;
     res.json(phones);
+    res.json(req.body);
   }
 
   async getPhones(req: Request, res: Response) {
-    const { ids } = req.body;
-    
-    const phones = await phonesService.getAll(ids);
+    const phones = await phonesService.getAll();
 
     res.statusCode = 200;
-    res.json(ids);
+    res.json(phones);
   };
 }
 
