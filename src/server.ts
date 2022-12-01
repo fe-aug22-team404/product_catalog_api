@@ -14,14 +14,10 @@ const phoneDescriptionRouter = express.Router();
 
 app.use(cors());
 app.use(express.json());
-app.use('/phones', phonesRouter);
-app.use('/phonedescription', phoneDescriptionRouter);
+app.use('/phones', phonesRouter, phoneDescriptionRouter);
 
+phoneDescriptionRouter.get('/:phoneId', phonesDescriptionController.getDescription);
 phonesRouter.get('/', phonesController.getPhones);
-phonesRouter.post('/', phonesController.postPhone);
-
-phoneDescriptionRouter.get('/', phonesDescriptionController.getDescriptions);
-phoneDescriptionRouter.post('/', phonesDescriptionController.postDescription);
 
 PhoneData.sync();
 PhoneDescription.sync();

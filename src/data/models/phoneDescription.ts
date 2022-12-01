@@ -2,6 +2,7 @@
 
 import { DataTypes } from 'sequelize';
 import { sequelize } from '../db';
+import { PhoneData } from './phones';
 
 export const PhoneDescription = sequelize.define('PhoneDescription', {
 	id: {
@@ -82,3 +83,4 @@ export const PhoneDescription = sequelize.define('PhoneDescription', {
 		tableName: 'PhoneDescriptions',
 	}
 );
+

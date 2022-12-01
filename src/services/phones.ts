@@ -1,5 +1,5 @@
 'use strict';
-
+import { Op } from 'sequelize';
 import { Phone } from '../types/Phone';
 import { PhoneData } from '../data/models/phones';
 
@@ -10,17 +10,24 @@ class PhonesService {
     return phone;
   }
 
-  async getAll() {
-    const phones = await PhoneData.findAll();
+  async getAll(ids: number[] | null) {
+    let phones;
+
+    if (!ids) {
+      phones = await PhoneData.findAll();
+    } else {
+      phones = await PhoneData.findAll({
+        where: {
+          'id': {
+            [Op.or]: ids,
+          }
+        }
+      });
+    }
 
     return phones;
   }
 
-  async getOne(id: number) {
-    const phone = await PhoneData.findByPk(id);
-
-    return phone;
-  }
 }
 
 export const phonesService = new PhonesService();
