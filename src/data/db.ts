@@ -1,3 +1,4 @@
+import * as pg from 'pg';
 import { Sequelize } from 'sequelize';
 
 // eslint-disable-next-line max-len

@@ -1,5 +1,4 @@
 import express from 'express';
-import pg from 'pg';
 import cors from 'cors';
 import serverless from 'serverless-http';
 import { phonesController } from './controllers/phone';
