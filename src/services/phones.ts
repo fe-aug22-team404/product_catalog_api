@@ -9,18 +9,6 @@ class PhonesService {
 
     return phones;
   }
-
-  async getCart(ids: number[]) {
-    const phones = await PhoneData.findAll({
-        where: {
-          'id': {
-            [Op.in]: ids,
-          }
-        }
-    });
-
-    return phones;
-  }
 }
 
 export const phonesService = new PhonesService();
