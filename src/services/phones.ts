@@ -14,7 +14,7 @@ class PhonesService {
     const phones = await PhoneData.findAll({
         where: {
           'id': {
-            [Op.or]: ids,
+            [Op.in]: ids,
           }
         }
     });
