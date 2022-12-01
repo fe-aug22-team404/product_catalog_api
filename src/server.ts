@@ -19,9 +19,8 @@ phoneDescriptionRouter.get('/:phoneId', phonesDescriptionController.getDescripti
 phonesRouter.get('/', phonesController.getPhones);
 phonesRouter.post('/', phonesController.getPhonesById);
 
-PhoneData.sync();
-PhoneDescription.sync();
-
 app.listen(port, () => {
+  PhoneData.sync();
+  PhoneDescription.sync();
   console.log('server started ', port);
 });
