@@ -16,6 +16,10 @@ export const PhoneData = sequelize.define('Phone', {
     type: DataTypes.STRING,
     allowNull: false,
   },
+  name: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
   fullPrice: {
     type: DataTypes.INTEGER,
     allowNull: false,
