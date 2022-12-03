@@ -1,9 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import { phonesController } from './controllers/phone';
-import { PhoneData } from './data/models/phones';
 import { phonesDescriptionController } from './controllers/phoneDescription';
-import { PhoneDescription } from './data/models/phoneDescription';
 
 const port = process.env.PORT || 8080;
 const app = express();
@@ -19,7 +17,5 @@ phoneDescriptionRouter.get('/:phoneId', phonesDescriptionController.getDescripti
 phonesRouter.get('/', phonesController.getPhones);
 
 app.listen(port, () => {
-  PhoneData.sync();
-  PhoneDescription.sync();
   console.log('server started ', port);
 });

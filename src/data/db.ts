@@ -1,5 +1,12 @@
 import { Sequelize } from 'sequelize';
+import * as dotenv from 'dotenv';
+
+dotenv.config();
 
 // eslint-disable-next-line max-len
-export const sequelize = new Sequelize('postgresql://postgres:10TdRj8WVrwmRIQDL6aD@containers-us-west-96.railway.app:6091/railway');
+export const sequelize = new Sequelize(process.env.DATABASE_URL!, {
+	dialectOptions: {
+		ssl: { "rejectUnauthorized": true }
+	}
+});
 

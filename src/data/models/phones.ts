@@ -4,6 +4,13 @@ import { DataTypes } from 'sequelize';
 import { sequelize } from '../db';
 
 export const PhoneData = sequelize.define('Phone', {
+  id: {
+    field: 'id',
+		type: DataTypes.STRING,
+		allowNull: false,
+		primaryKey: true,
+    autoIncrement: false,
+  },
   category: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -16,10 +23,10 @@ export const PhoneData = sequelize.define('Phone', {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  // name: {
-  //   type: DataTypes.STRING,
-  //   allowNull: false,
-  // },
+  name: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
   fullPrice: {
     type: DataTypes.INTEGER,
     allowNull: false,

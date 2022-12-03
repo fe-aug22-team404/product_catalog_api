@@ -1,6 +1,4 @@
 'use strict';
-import { Op } from 'sequelize';
-import { Phone } from '../types/Phone';
 import { PhoneData } from '../data/models/phones';
 
 class PhonesService {

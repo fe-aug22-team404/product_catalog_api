@@ -1,7 +1,6 @@
 'use strict';
 
 import { PhoneDescription } from '../data/models/phoneDescription';
-import { PhoneDescr } from '../types/PhoneDescr';
 
 class PhonesDescriptionService {
   async getOne(id: string) {
