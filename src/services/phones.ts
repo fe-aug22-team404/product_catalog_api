@@ -14,7 +14,7 @@ class PhonesService {
 
       phones = await PhoneData.findAll({
         where: {
-          'id': options,
+          'phoneId': options,
         }
       });
     }
