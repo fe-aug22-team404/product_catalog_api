@@ -6,7 +6,7 @@ dotenv.config();
 // eslint-disable-next-line max-len
 export const sequelize = new Sequelize(process.env.DATABASE_URL!, {
 	dialectOptions: {
-		ssl: { "rejectUnauthorized": true }
+		ssl: { "rejectUnauthorized": false }
 	}
 });
 
