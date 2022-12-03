@@ -10,7 +10,7 @@ class PhonesService {
     } 
 
     if (typeof favourites === 'string') {
-      const options = favourites.split(',').map(option => +option);
+      const options = favourites.split(',');
 
       phones = await PhoneData.findAll({
         where: {
