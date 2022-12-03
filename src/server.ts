@@ -15,5 +15,4 @@ app.use('/.netlify/functions/server/phones', router);
 router.get('/:phoneId', phonesDescriptionController.getDescription);
 router.get('/', phonesController.getPhones);
 
-
 export const handler = serverless(app);
