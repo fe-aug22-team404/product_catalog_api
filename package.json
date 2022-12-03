@@ -5,8 +5,10 @@
   "description": "",
   "main": "src/server.ts",
   "scripts": {
-    "start": "ts-node src/server.ts",
+    "start": "./node_modules/.bin/netlify-lambda serve src",
+    "build": "./node_modules/.bin/netlify-lambda build src",
     "setup": "ts-node src/setup.ts",
+    "nodemon": "./node_modules/.bin/nodemon src/server.ts",
     "ts-check": "tsc --noEmit --lib ES2015 ./src/*.ts",
     "dev": "nodemon src/server.ts"
   },
