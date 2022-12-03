@@ -1,3 +1,8 @@
+export interface Description {
+  title: string,
+  text: string[],
+}
+
 export interface PhoneDescr {
 	id: string,
 	namespaceId: string,
@@ -9,12 +14,12 @@ export interface PhoneDescr {
 	colorsAvailable: string[],
 	color: string,
 	images: string[],
-	description: JSON[],
+	description: Description[],
 	screen: string,
 	resolution: string,
 	processor: string,
 	ram: string,
 	camera: string,
 	zoom: string,
-	ceil: string[],
+	cell: string[],
 }

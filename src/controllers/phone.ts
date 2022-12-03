@@ -6,7 +6,8 @@ const { phonesService } = require('../services/phones');
 
 class PhonesController {
   async getPhones(req: Request, res: Response) {
-    const phones = await phonesService.getAll();
+    const { favourites } = req.query;
+    const phones = await phonesService.getAll(favourites);
 
     res.statusCode = 200;
     res.json(phones);

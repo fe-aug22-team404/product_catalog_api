@@ -1,11 +1,13 @@
 {
+  "type": "commonjs",
   "name": "product_catalog_api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/server.ts",
   "scripts": {
     "start": "node src/server.ts",
     "setup": "ts-node src/setup.ts",
+    "nodemon": "./node_modules/.bin/nodemon src/server.ts",
     "ts-check": "tsc --noEmit --lib ES2015 ./src/*.ts",
     "dev": "nodemon src/server.ts"
   },
