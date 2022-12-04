@@ -1,4 +1,5 @@
 'use strict';
+import { sequelize } from 'src/data/db';
 import { PhoneData } from '../data/models/phones';
 
 class PhonesService {
@@ -22,7 +23,7 @@ class PhonesService {
     if (typeof order === 'string') {
       phones = await PhoneData.findAll({
         order: [
-          'year', 'DESC',
+          sequelize.fn('max', sequelize.col('year')), 'DESC'
         ]
       });
     }
