@@ -23,7 +23,7 @@ class PhonesService {
     if (typeof order === 'string') {
       phones = await PhoneData.findAll({
         order: [
-          'year', 'DESC'
+          ['year', 'DESC'],
         ]
       });
     }
