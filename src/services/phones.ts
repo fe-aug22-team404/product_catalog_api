@@ -3,7 +3,7 @@ import { sequelize } from 'src/data/db';
 import { PhoneData } from '../data/models/phones';
 
 class PhonesService {
-  async getAll(favourites: string | undefined, order: string | undefined) {
+  async getAll(favourites: string | undefined, orderType: string | undefined) {
     let phones;
     
     if (favourites === undefined) {
@@ -20,10 +20,10 @@ class PhonesService {
       });
     }
 
-    if (typeof order === 'string') {
+    if (typeof orderType === 'string') {
       phones = await PhoneData.findAll({
         order: [
-          ['year', 'DESC'],
+          [orderType, 'DESC'],
         ]
       });
     }
