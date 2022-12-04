@@ -1,12 +1,11 @@
 'use strict';
-import { sequelize } from 'src/data/db';
 import { PhoneData } from '../data/models/phones';
 
 class PhonesService {
   async getAll(favourites: string | undefined, orderType: string | undefined) {
     let phones;
     
-    if (favourites === undefined) {
+    if (favourites === undefined && orderType === undefined) {
       phones = await PhoneData.findAll();
     } 
 
