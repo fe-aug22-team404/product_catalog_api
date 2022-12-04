@@ -2,7 +2,7 @@
 import { PhoneData } from '../data/models/phones';
 
 class PhonesService {
-  async getAll(favourites: string | undefined) {
+  async getAll(favourites: string | undefined, order: string | undefined) {
     let phones;
     
     if (favourites === undefined) {
@@ -16,6 +16,14 @@ class PhonesService {
         where: {
           'phoneId': options,
         }
+      });
+    }
+
+    if (typeof order === 'string') {
+      phones = await PhoneData.findAll({
+        order: [
+          'year', 'DESC',
+        ]
       });
     }
 
