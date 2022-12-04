@@ -23,7 +23,7 @@ class PhonesService {
     if (typeof order === 'string') {
       phones = await PhoneData.findAll({
         order: [
-          sequelize.fn('max', sequelize.col('year')), 'DESC'
+          sequelize.literal('year DESC')
         ]
       });
     }
