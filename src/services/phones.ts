@@ -1,16 +1,17 @@
 'use strict';
+import { Sequelize } from 'sequelize';
 import { PhoneData } from '../data/models/phones';
 
 class PhonesService {
-  async getAll(favourites?: string, orderType?: string) {
+  async getAll(query?: string, orderType?: string) {
     let phones;
     
-    if (favourites === undefined && orderType === undefined) {
+    if (query === undefined && orderType === undefined) {
       phones = await PhoneData.findAll();
     } 
 
-    if (typeof favourites === 'string') {
-      const options = favourites.split(',');
+    if (typeof query === 'string') {
+      const options = query.split(',');
 
       phones = await PhoneData.findAll({
         where: {
@@ -19,10 +20,18 @@ class PhonesService {
       });
     }
 
-    if (typeof orderType === 'string') {
+    if (typeof orderType === 'string' && orderType !== 'random') {
       phones = await PhoneData.findAll({
         order: [
           [orderType, 'DESC'],
+        ]
+      });
+    }
+
+    if (typeof orderType === 'string' && orderType === 'random') {
+      phones = await PhoneData.findAll({
+        order: [
+          Sequelize.literal('random()'),
         ]
       });
     }
