@@ -2,7 +2,7 @@
 import { PhoneData } from '../data/models/phones';
 
 class PhonesService {
-  async getAll(favourites: string | undefined, orderType: string | undefined) {
+  async getAll(favourites?: string, orderType?: string) {
     let phones;
     
     if (favourites === undefined && orderType === undefined) {
