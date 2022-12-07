@@ -1,5 +1,6 @@
 'use strict';
 import { Sequelize } from 'sequelize';
+import { sequelize } from 'src/data/db';
 import { PhoneData } from '../data/models/phones';
 
 class PhonesService {
@@ -30,9 +31,7 @@ class PhonesService {
 
     if (typeof orderType === 'string' && orderType === 'random') {
       phones = await PhoneData.findAll({
-        order: [
-          Sequelize.literal('random()'),
-        ]
+        order:  sequelize.random()
       });
     }
 
