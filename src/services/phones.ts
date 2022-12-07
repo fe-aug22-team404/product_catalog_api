@@ -1,6 +1,6 @@
 'use strict';
 
-import { shuffle } from 'src/utils/_shuffle';
+import { shuffle } from '../utils/_shuffle';
 import { PhoneData } from '../data/models/phones';
 
 class PhonesService {
