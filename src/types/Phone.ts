@@ -1,6 +1,8 @@
+import { Categories } from "./categories";
+
 export interface Phone {
-	id: string,
-	category: string,
+  id: string,
+  category: Categories,
   phoneId: string,
   itemId: string,
   name: string,

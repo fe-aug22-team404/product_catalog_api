@@ -5,10 +5,9 @@ import { sequelize } from '../db';
 
 export const PhoneData = sequelize.define('Phone', {
   id: {
-    field: 'id',
-		type: DataTypes.STRING,
-		allowNull: false,
-		primaryKey: true,
+    type: DataTypes.STRING,
+    allowNull: false,
+    primaryKey: true,
     autoIncrement: false,
   },
   category: {
@@ -28,6 +27,10 @@ export const PhoneData = sequelize.define('Phone', {
   },
   name: {
     field: 'name',
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  name: {
     type: DataTypes.STRING,
     allowNull: false,
   },

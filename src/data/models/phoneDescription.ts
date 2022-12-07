@@ -4,13 +4,12 @@ import { DataTypes } from 'sequelize';
 import { sequelize } from '../db';
 
 export const PhoneDescription = sequelize.define('PhoneDescription', {
-	id: {
-    field: 'id',
-		type: DataTypes.STRING,
-		allowNull: false,
-		primaryKey: true,
+  id: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    primaryKey: true,
     autoIncrement: false,
-	},
+  },
   namespaceId: {
     field: 'namespaceId',
     type: DataTypes.STRING,
@@ -22,7 +21,6 @@ export const PhoneDescription = sequelize.define('PhoneDescription', {
     allowNull: false,
   },
   capacityAvailable: {
-    field: 'capacityAvailable',
     type: DataTypes.JSON,
     allowNull: false,
   },
@@ -36,68 +34,56 @@ export const PhoneDescription = sequelize.define('PhoneDescription', {
     type: DataTypes.INTEGER,
     allowNull: false,
   },
-	priceDiscount: {
-    field: 'priceDiscount',
+  priceDiscount: {
     type: DataTypes.INTEGER,
     allowNull: false,
   },
-	colorsAvailable: {
-    field: 'colorsAvailable',
+  colorsAvailable: {
     type: DataTypes.JSON,
     allowNull: false,
   },
-	color: {
-    field: 'color',
+  color: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-	images: {
-    field: 'images',
+  images: {
     type: DataTypes.JSON,
     allowNull: false,
   },
-	description: {
-    field: 'description',
+  description: {
     type: DataTypes.JSON,
     allowNull: false,
   },
-	screen: {
-    field: 'screen',
+  screen: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-	resolution: {
-    field: 'resolution',
+  resolution: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-	processor: {
-    field: 'processor',
+  processor: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-	ram: {
-    field: 'ram',
+  ram: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-	camera: {
-    field: 'camera',
+  camera: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-	zoom: {
-    field: 'zoom',
+  zoom: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-	cell: {
-    field: 'cell',
+  cell: {
     type: DataTypes.JSON,
     allowNull: false,
   },
 },
-	{
-		tableName: 'PhoneDescriptions',
-	}
+  {
+    tableName: 'PhoneDescriptions',
+  }
 );
