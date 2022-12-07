@@ -1,7 +1,6 @@
 'use strict';
 
-import { Sequelize } from 'sequelize';
-import { shuffle } from 'src/utils/function.shuffle';
+import { shuffle } from 'src/utils/_shuffle';
 import { PhoneData } from '../data/models/phones';
 
 class PhonesService {
