@@ -18,7 +18,7 @@ export const Tablets = sequelize.define('Tablet', {
 		type: DataTypes.STRING,
     allowNull: false,
 	},
-	imageUrl: {
+	image: {
 		type: DataTypes.STRING,
     allowNull: false,
 	},
