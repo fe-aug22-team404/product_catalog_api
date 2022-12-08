@@ -1,7 +1,7 @@
 'use strict';
 
 import { Request, Response } from "express";
-import { tabletsService } from "src/services/tablets";
+import { tabletsService } from "../services/tablets";
 
 class TabletsController {
   async getTablets(req: Request, res: Response) {

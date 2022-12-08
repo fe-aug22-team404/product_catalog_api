@@ -1,6 +1,6 @@
 'use strict';
 
-import { Tablets } from 'src/data/models/tablets';
+import { Tablets } from '../data/models/tablets';
 
 class TabletsService {
   async getAll() {
