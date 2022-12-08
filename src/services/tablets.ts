@@ -1,10 +1,21 @@
 'use strict';
 
+import { QueryTypes } from 'sequelize';
 import { Tablets } from '../data/models/tablets';
 
 class TabletsService {
-  async getAll() {
-    const tablets = await Tablets.findAll();
+  async getAll(quantity?: string ) {
+    let tablets;
+    
+    if (quantity === undefined) {
+      tablets = await Tablets.findAll();
+    }
+
+    if (typeof quantity === 'string') {
+      tablets = await Tablets.findAll();
+
+      return tablets.length;
+    }
 
     return tablets;
   }
