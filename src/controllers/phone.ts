@@ -6,8 +6,8 @@ const { phonesService } = require('../services/phones');
 
 class PhonesController {
   async getPhones(req: Request, res: Response) {
-    const { query, orderType } = req.query;
-    const phones = await phonesService.getAll(query, orderType);
+    const { query, orderType, quantity } = req.query;
+    const phones = await phonesService.getAll(query, orderType, quantity);
 
     res.statusCode = 200;
     res.json(phones);
