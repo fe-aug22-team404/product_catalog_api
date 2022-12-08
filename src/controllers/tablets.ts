@@ -5,8 +5,8 @@ const { tabletsService } = require('../services/tablets');
 
 class TabletsController {
   async getTablets(req: Request, res: Response) {
-    const { quantity } = req.query;
-    const tablets = await tabletsService.getAll(quantity);
+    const { quantity, query } = req.query;
+    const tablets = await tabletsService.getAll(quantity, query);
     
     res.statusCode = 200;
     res.json(tablets);

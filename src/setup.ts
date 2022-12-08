@@ -10,16 +10,16 @@ const phoneDescription = require('../source/PhonesDescriptions.json');
 const tablets = require('../source/tablets.json');
 
 (async() => {
-  // await PhoneData.sync({ force: true });
-  // await PhoneDescription.sync({ force: true });
+  await PhoneData.sync({ force: true });
+  await PhoneDescription.sync({ force: true });
   await Tablets.sync({ force: true });
 
-  // Promise.all(phones.map((phone: Phone) => (
-  //   PhoneData.create({ ...phone })
-  // )));
-  // Promise.all(phoneDescription.map((phone: PhoneDescr) => (
-  //   PhoneDescription.create({ ...phone })
-  // )));
+  Promise.all(phones.map((phone: Phone) => (
+    PhoneData.create({ ...phone })
+  )));
+  Promise.all(phoneDescription.map((phone: PhoneDescr) => (
+    PhoneDescription.create({ ...phone })
+  )));
   Promise.all(tablets.map((tablet: Tablet) => (
     Tablets.create({ ...tablet })
   )));
