@@ -11,10 +11,12 @@ export const PhoneDescription = sequelize.define('PhoneDescription', {
     autoIncrement: false,
   },
   namespaceId: {
+    field: 'namespaceId',
     type: DataTypes.STRING,
     allowNull: false,
   },
   name: {
+    field: 'name',
     type: DataTypes.STRING,
     allowNull: false,
   },
@@ -23,10 +25,12 @@ export const PhoneDescription = sequelize.define('PhoneDescription', {
     allowNull: false,
   },
   capacity: {
+    field: 'capacity',
     type: DataTypes.STRING,
     allowNull: false,
   },
   priceRegular: {
+    field: 'priceRegular',
     type: DataTypes.INTEGER,
     allowNull: false,
   },

@@ -21,4 +21,8 @@ app.use('/.netlify/functions/server/tablets', tabletsRouter)
 
 tabletsRouter.get('/', tabletsController.getTablets);
 
-export const handler = serverless(app);
+app.listen(port, () => {
+  PhoneData.sync();
+  PhoneDescription.sync();
+  console.log('server started ', port);
+});

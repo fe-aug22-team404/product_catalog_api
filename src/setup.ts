@@ -23,4 +23,5 @@ const tablets = require('../source/tablets.json');
   Promise.all(tablets.map((tablet: Tablet) => (
     Tablets.create({ ...tablet })
   )));
+
 })();

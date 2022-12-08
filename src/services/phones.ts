@@ -22,6 +22,7 @@ class PhonesService {
       return phones.length;
     }
 
+
     if (typeof query === 'string') {
       const options = query.split(',');
 
