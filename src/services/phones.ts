@@ -4,12 +4,24 @@ import { shuffle } from '../utils/_shuffle';
 import { PhoneData } from '../data/models/phones';
 
 class PhonesService {
-  async getAll(query?: string, orderType?: string) {
+  async getAll(
+    query?: string,
+    orderType?: string,
+    quantity?: string) {
     let phones;
     
-    if (query === undefined && orderType === undefined) {
+    if (query === undefined
+        && orderType === undefined
+        && quantity === undefined) {
       phones = await PhoneData.findAll();
-    } 
+    }
+
+    if (typeof quantity === 'string') {
+      phones = await PhoneData.findAll();
+
+      return phones.length;
+    }
+
 
     if (typeof query === 'string') {
       const options = query.split(',');
