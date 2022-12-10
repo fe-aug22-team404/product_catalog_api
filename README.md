@@ -2,7 +2,7 @@
 
 FRONT-END DEMO - [DEMO LINK](https://fe-aug22-team404.github.io/product_catalog/)
 
-FE repo [team-404](https://github.com/fe-aug22-team404/product)
+FE repo [team-404](https://github.com/fe-aug22-team404/product_catalog)
 
 BE stack - Node, Express, Sequelize
 
