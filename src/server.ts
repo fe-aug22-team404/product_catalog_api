@@ -15,7 +15,7 @@ app.use(express.json());
 app.use('/.netlify/functions/server/phones', router);
 
 app.get('/.netlify/functions/server', (req, res) => {
-  res.sendFile('../public/index.html');
+  res.send('../public/index.html');
 });
 
 router.get('/:phoneId', phonesDescriptionController.getDescription);
