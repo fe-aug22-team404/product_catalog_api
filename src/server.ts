@@ -4,6 +4,7 @@ import { phonesController } from './controllers/phone';
 import { phonesDescriptionController } from './controllers/phoneDescription';
 import serverless from 'serverless-http';
 import { tabletsController } from './controllers/tablets';
+import { description } from './public/index';
 
 const app = express();
 const router = express.Router();
@@ -15,7 +16,7 @@ app.use(express.json());
 app.use('/.netlify/functions/server/phones', router);
 
 app.get('/.netlify/functions/server', (req, res) => {
-  res.send('../public/index.html');
+  res.send(description);
 });
 
 router.get('/:phoneId', phonesDescriptionController.getDescription);
