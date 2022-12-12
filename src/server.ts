@@ -15,7 +15,7 @@ app.use(express.json());
 
 app.use('/.netlify/functions/server/phones', router);
 
-app.get('/', (req, res) => {
+app.get('/.netlify/functions/server', (req, res) => {
   res.sendFile(path.join(__dirname, '/public/index.html'));
 });
 
